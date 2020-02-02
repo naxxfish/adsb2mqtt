@@ -8,7 +8,7 @@ It is possible to [recieve these signals](https://www.satsignal.eu/raspberry-pi/
 
 The program often used to do this, dump1090, outputs a stream of messages on port 30003, which can be parsed to get retrieve the information of each aeroplane's broadcast.
 
-This app decodes that stream of messages and converts them into MQTT messages which are arranged by aircraft and flight number - allowing you to build applications that subscribe to updates from specific aircraft or flight numbers using a MQTT broker.
+This app decodes that stream of messages and converts them into MQTT messages which are arranged by aircraft callsign - allowing you to build applications that subscribe to updates from specific aircraft or flight numbers using a MQTT broker.
 
 ## Requirements
 
