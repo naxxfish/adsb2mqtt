@@ -1,7 +1,31 @@
 {
-  "author": "Chris Roberts <chris@naxxfish.net> (http://naxxfish.net/)",
   "name": "adsb2mqtt",
   "version": "0.0.1",
+  "author": {
+    "name": "Chris Roberts",
+    "email": "chris@naxxfish.net",
+    "url": "https://naxxfish.net"
+  },
+  "description": "Track planes through a MQTT broker from your own ModeS reciever",
+  "keywords": [
+    "adsb",
+    "sbs1",
+    "modes",
+    "mqtt",
+    "aircraft"
+  ],
+  "main": "app.js",
+  "bin": {
+    "asdb2mqtt": "./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naxxfish/adsb2mqtt"
+  },
+  "bugs": "https://github.com/naxxfish/adsb2mqtt/issues",
+  "engines": {
+    "node": ">=13.7.0"
+  },
   "dependencies": {
     "bunyan": "^1.8.12",
     "mqtt": "^3.0.0",
