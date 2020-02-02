@@ -2,5 +2,5 @@
     "modes": {
         "port": 30003
     },
-    "reciever_id": "asdb2mqtt"
+    "reciever_id": "adsb2mqtt"
 }
