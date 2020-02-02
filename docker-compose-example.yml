@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+    adsb2mqtt:
+        build: .
+        environment:
+            mqtt__uri: mqtt://mqtt
+            modes__host: pi-sdr.home.naxxfish.net
+            modes__port: 30003
+    mqtt:
+        image: eclipse-mosquitto
+        ports:
+          - 1883:1883
