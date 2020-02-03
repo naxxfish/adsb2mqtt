@@ -6,7 +6,7 @@ ADS-B is the system aircraft use to broadcast their position via digital radio s
 
 It is possible to [recieve these signals](https://www.satsignal.eu/raspberry-pi/dump1090.html) relatively easily and cheaply using a RTL-SDR dongle and a Raspberry Pi.  You can then send on the data to various flight tracking apps like [flightradar24](https://www.flightradar24.com/build-your-own), [FlightAware](https://flightaware.com/adsb/) and others.
 
-The program often used to do this, dump1090, outputs a stream of messages on port 30003, which can be parsed to get retrieve the information of each aeroplane's broadcast.
+The program often used to do this, dump1090, outputs a stream of messages on port 30002, which can be parsed to get retrieve the information of each aeroplane's broadcast.
 
 This app decodes that stream of messages and converts them into MQTT messages which are arranged by aircraft callsign - allowing you to build applications that subscribe to updates from specific aircraft or flight numbers using a MQTT broker.
 
