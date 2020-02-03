@@ -12,7 +12,7 @@ This app decodes that stream of messages and converts them into MQTT messages wh
 
 ## Requirements
 
-You will need a host which you can connect to with an RTL-SDR USB stick, running [dump1090](https://github.com/antirez/dump1090) or similar, and can be connected to and recieve a SBS-1 compatible serial stream.
+You will need a host which you can connect to with an RTL-SDR USB stick, running [dump1090](https://github.com/antirez/dump1090) or similar, and can be connected to and recieve a "Beast Mode" compatible serial stream (normally port 30002).
 
 You'll also want a machine that's running the Docker Daemon to run it on.
 
@@ -80,27 +80,18 @@ The position of the aircraft, in JSON format.  e.g.
   "long": -0.09375
 }
 ```
+
+### `adsb2mqtt/aircraft/$callsign/speed`
+The (air) speed that the aircraft is traveling at
+
+### `adsb2mqtt/aircraft/$callsign/heading`
+The compass heading of the nose of the aircraft
+
+### `adsb2mqtt/aircraft/$callsign/msg_count`
+The number of Mode-S messages recieved from this aircraft.
+
 ### `adsb2mqtt/aircraft/$callsign/altitude`
 The altitude in feet, calculated from pressure, relative to 1013.2 mb (sea level)
-
-### `adsb2mqtt/aircraft/$callsign/ground_speed`
-As the [documentation](http://woodair.net/SBS/Article/Barebones42_Socket_Data.htm) says, "speed over ground". Probably [knots](https://en.wikipedia.org/wiki/Knot_(unit)), but I'm not entirely sure.
-
-### `adsb2mqtt/aircraft/$callsign/squawk`
-The [transponder code](https://en.wikipedia.org/wiki/Transponder_(aeronautics)) the aircraft currently has set.  Hopefully, it's not 7700, 7600 or 7500. This one of the codes that appear on Air Traffic Control radar screens to identify each aircraft.
-
-### `adsb2mqtt/aircraft/$callsign/emergency`
-Whether the aircraft is encountering an emergency (closely related to squawking 7700)
-
-### `adsb2mqtt/aircraft/$callsign/track`
-The [ground track](https://en.wikipedia.org/wiki/Ground_track) angle.
-
-### `adsb2mqtt/aircraft/$callsign/onground`
-Whether the aircraft has the "ground squat" switch has been activated.  This switch activates when the weight of the aircraft is on the landing gear - i.e. it has landed and is on the ground.  It prevents the landing gear from being retracted when the aircraft is not airbourne. For more information see the [FAA flying handbook](https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/airplane_handbook/media/airplane_flying_handbook.pdf) page 2-8.
-
-This topic can have either `air` or `ground` published to it to indicate this status.
-
-**Note**: If your reciever is not very high up, or very close to an airport, you probably won't always see these go from `air` to `ground` as aircraft land
 
 ## License
 

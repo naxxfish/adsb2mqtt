@@ -2,5 +2,7 @@
     "modes": {
         "port": 30003
     },
-    "reciever_id": "adsb2mqtt"
+    "reciever_id": "adsb2mqtt",
+    "timeout": 120000,
+    "updaterate": 1000
 }
